@@ -18,5 +18,7 @@ if player == "rock" or "paper" or "scissor":
         print("Tie")
     else:
         print("Player Won")
+else:
+    print("Wrong Input Try Again")
         
 
