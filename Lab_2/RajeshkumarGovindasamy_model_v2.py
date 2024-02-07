@@ -5,9 +5,7 @@
 from ucimlrepo import fetch_ucirepo 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
 breast_cancer_wisconsin_diagnostic = fetch_ucirepo(id=17) 
 
@@ -31,7 +29,7 @@ X_test_scaled = scaler.transform(X_test)
 # **Build the model**
 
 # %%
-model = SVC(kernel='rbf', random_state=42)  # Using the radial basis function kernel
+model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train_scaled, y_train)
 
 # %% [markdown]
